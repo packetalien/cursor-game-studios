@@ -20,10 +20,17 @@ All notable changes to **Cursor Game Studios** are documented here.
   `docs/orchestration-patterns.md`, `docs/agent-skill-affinity-matrix.md`;
   `02-phase-02-agent-skill-deepening.md`; `scripts/phase2-deepen.py`;
   `docs/index.md` links to Phase 2 docs and `skills/index.md`.
+- **Phase 3 — Orchestration + pipelines + automation:** chapter
+  `03-phase-03-advanced-orchestration-production-pipelines.md`;
+  `docs/advanced-orchestration.md`; `pipelines/` (nine pipeline definitions +
+  index); scripts `studio-health-check.py`, `pipeline-runner.py`,
+  `studio-metrics.py`, `nightly-studio-audit.py`; `tests/test_phase3_pipelines.py`.
 
 ### Changed
 
-- `ROADMAP.md` phase table realigned to Phase 1–2 completion and future work.
+- `ROADMAP.md` phase table realigned through Phase 3 completion and future work.
+- `README.md`, `TASKLIST.md`, `STATUS.md`, `MANIFEST.md`, `docs/index.md`,
+  `CONTRIBUTING.md` updated for Phase 3 navigation.
 
 ## Attribution
 

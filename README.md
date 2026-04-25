@@ -55,6 +55,21 @@ pip install pytest
 pytest
 ```
 
+## Phase 3 — Orchestration & pipelines
+
+- **Charter:** `03-phase-03-advanced-orchestration-production-pipelines.md`
+- **Advanced orchestration:** `docs/advanced-orchestration.md`
+- **Pipelines:** `pipelines/index.md`
+- **Automation:**
+
+```bash
+python scripts/studio-health-check.py --require-phase2-mark
+python scripts/pipeline-runner.py --list
+python scripts/pipeline-runner.py vertical-slice
+python scripts/studio-metrics.py
+python scripts/nightly-studio-audit.py
+```
+
 ## License
 
 See **`LICENSE`** (MIT with upstream attribution).

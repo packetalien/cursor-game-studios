@@ -12,6 +12,7 @@
 - [Skills](#skills)
 - [Rules](#rules)
 - [Phase 2 artifacts](#phase-2-artifacts)
+- [Phase 3 artifacts](#phase-3-artifacts)
 - [Index](#index)
 - [Glossary](#glossary)
 - [Index of tables](#index-of-tables)
@@ -193,6 +194,19 @@
 All `.cursor/agents/**/*.md` and `.cursor/skills/**/SKILL.md` include a Phase 2
 appendix after `<!-- PHASE2_DEEPENING_BEGIN -->`.
 
+## Phase 3 artifacts
+
+| Artifact | Role |
+|----------|------|
+| `03-phase-03-advanced-orchestration-production-pipelines.md` | Phase 3 charter |
+| `docs/advanced-orchestration.md` | Multi-agent orchestration + rhythm |
+| `pipelines/index.md` | Pipeline catalog |
+| `pipelines/*-pipeline.md` | Nine production pipeline definitions |
+| `scripts/studio-health-check.py` | Structure + optional Phase2 marker gate |
+| `scripts/pipeline-runner.py` | Pipeline checklist printer |
+| `scripts/studio-metrics.py` | JSON metrics snapshot |
+| `scripts/nightly-studio-audit.py` | Health + metrics + contamination scan |
+
 ## Index
 
 - Agents: [Directors](#directors), [Leads](#leads), [Specialists](#specialists)
@@ -214,4 +228,5 @@ appendix after `<!-- PHASE2_DEEPENING_BEGIN -->`.
 |-------|----------|
 | Counts | [Counts](#counts) |
 | Phase 2 | [Phase 2 artifacts](#phase-2-artifacts) |
+| Phase 3 | [Phase 3 artifacts](#phase-3-artifacts) |
 | Glossary | [Glossary](#glossary) |

@@ -8,15 +8,21 @@
 
 ## Phase 2 (agent and skill deepening) — complete
 
-- [x] `scripts/phase2-deepen.py` idempotent append to all agents and skills
-- [x] `skills/` categorized companion pages + `skills/index.md`
-- [x] `docs/studio-operating-doctrine.md`
-- [x] `docs/orchestration-patterns.md`
-- [x] `docs/agent-skill-affinity-matrix.md`
-- [x] `02-phase-02-agent-skill-deepening.md`
-- [x] Metadata: `ROADMAP`, `MANIFEST`, `CHANGES`, `STATUS`, `docs/index.md`
+- [x] `phase2-deepen.py` + `skills/` tree + doctrine + affinity matrix + chapter `02`
 
-## Phase 3+ (next)
+## Phase 3 (orchestration + pipelines + automation) — complete
+
+- [x] `03-phase-03-advanced-orchestration-production-pipelines.md`
+- [x] `docs/advanced-orchestration.md`
+- [x] `pipelines/` — nine pipeline definitions + `pipelines/index.md`
+- [x] `scripts/studio-health-check.py`
+- [x] `scripts/pipeline-runner.py`
+- [x] `scripts/studio-metrics.py`
+- [x] `scripts/nightly-studio-audit.py`
+- [x] `tests/test_phase3_pipelines.py`
+- [x] Metadata + `docs/index.md` + `README.md` links
+
+## Phase 4+ (next)
 
 - [ ] Tune `.mdc` globs for your real UE project layout
-- [ ] Add optional `mcp.json` examples (no secrets) under `docs/`
+- [ ] Wire `nightly-studio-audit.py` into CI schedule (optional)

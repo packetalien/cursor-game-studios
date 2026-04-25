@@ -17,7 +17,8 @@
 3. Run `python scripts/phase2-deepen.py` to (re)apply Phase 2 appendices idempotently
    and refresh the `skills/` companion tree.
 4. Run `pytest`.
-5. Append `CHANGES.md` under `[Unreleased]`.
+5. Optionally run `python scripts/nightly-studio-audit.py` before large merges.
+6. Append `CHANGES.md` under `[Unreleased]`.
 
 ## Rules style
 

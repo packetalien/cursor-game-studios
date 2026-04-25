@@ -35,3 +35,6 @@ re-homed for **Cursor** (`.cursor/` for agents, skills, and internal studio docs
 | [orchestration-patterns.md](orchestration-patterns.md) | Handoff and swarm patterns |
 | [agent-skill-affinity-matrix.md](agent-skill-affinity-matrix.md) | Heuristic agent ↔ skill pairings |
 | [`../skills/index.md`](../skills/index.md) | Categorized skill companion index (Phase 2) |
+| [advanced-orchestration.md](advanced-orchestration.md) | Directors/leads/specialists + long-session rhythm (Phase 3) |
+| [`../pipelines/index.md`](../pipelines/index.md) | Production pipeline catalog (Phase 3) |
+| [`../03-phase-03-advanced-orchestration-production-pipelines.md`](../03-phase-03-advanced-orchestration-production-pipelines.md) | Phase 3 charter |

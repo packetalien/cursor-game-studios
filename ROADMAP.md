@@ -20,13 +20,13 @@ into the repository.
 |------:|------|-------------|
 | **1** | **Foundation** | 49 / 72 / 12 assets, docs, legal spine, push to GitHub |
 | **2** | **Agent and skill deepening** | Additive deepening + `skills/` tree + doctrine + affinity matrix |
-| 3 | **Rule tuning (engine paths)** | Tune `.mdc` globs for UE5 `Source/`, `Plugins/`, `Content/` when adopted |
-| 4 | **Director workflow drills** | Validate lead → specialist patterns in Cursor Task flows |
-| 5 | **UE5.5+ exemplars** | Long-form examples in `skills/` companions (non-breaking) |
-| 6 | **MCP hardening** | Least-privilege templates and timeouts |
-| 7 | **CI translation** | Map legacy hook ideas to `pre-commit` + CI |
-| 8 | **Performance chapter** | Studio-wide profiling checklists |
-| 9 | **Release discipline** | Harden release skills with org-specific gates |
+| **3** | **Orchestration + pipelines + automation** | Advanced orchestration, `pipelines/`, health/metrics/nightly audit scripts |
+| 4 | **Rule tuning (engine paths)** | Tune `.mdc` globs for UE5 `Source/`, `Plugins/`, `Content/` when adopted |
+| 5 | **Director workflow drills** | Validate lead → specialist patterns in Cursor Task flows |
+| 6 | **Engine exemplars** | Long-form examples in `skills/` companions (non-breaking) |
+| 7 | **MCP hardening** | Least-privilege templates and timeouts |
+| 8 | **CI translation** | Map legacy hook ideas to `pre-commit` + CI |
+| 9 | **Performance chapter** | Studio-wide profiling checklists |
 | 10 | **Sustainability** | Upstream diff discipline and semver for port releases |
 
 ## Phase status
@@ -35,4 +35,5 @@ into the repository.
 |------:|-------|
 | 1 | **Complete** |
 | 2 | **Complete** (see `02-phase-02-agent-skill-deepening.md`) |
-| 3–10 | Planned |
+| 3 | **Complete** (see `03-phase-03-advanced-orchestration-production-pipelines.md`) |
+| 4–10 | Planned |
