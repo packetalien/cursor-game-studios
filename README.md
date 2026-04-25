@@ -50,9 +50,24 @@ if needed).
 
 ## Tests
 
+From the **repository root** (the folder that contains `tests/`):
+
 ```bash
 pip install pytest
-python -m pytest
+python -m pytest -q
+```
+
+Stdlib **unittest** discovery (Python 3.11+ needs `-t .` so the `tests` package
+is importable; `tests/__init__.py` is included for that):
+
+```bash
+python -m unittest discover -s tests -p "test_*.py" -v -t .
+```
+
+PowerShell (same intent):
+
+```powershell
+python -m unittest discover -s tests -p "test_*.py" -v -t .
 ```
 
 ## Phase 3 — Orchestration & pipelines

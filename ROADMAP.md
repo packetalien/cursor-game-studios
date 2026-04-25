@@ -174,6 +174,7 @@ privilege**, timeouts, and **tool allowlists**.
 | Health + markers | `python scripts/studio-health-check.py --require-phase2-mark` | Exit 0 |
 | Night audit | `python scripts/nightly-studio-audit.py` | Clean or strict CI policy |
 | Pytest | `python -m pytest -q` | All green |
+| Unittest discover | `python -m unittest discover -s tests -p "test_*.py" -v -t .` | 10 tests OK (use **`-t .`** from repo root; Python 3.11+ / Windows) |
 
 ---
 

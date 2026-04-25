@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import subprocess
 import sys
+import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,39 +25,36 @@ EXPECTED = [
 ]
 
 
-def test_pipeline_files_present():
-    pdir = ROOT / "pipelines"
-    for name in EXPECTED:
-        assert (pdir / name).is_file(), f"missing {name}"
-    assert (pdir / "index.md").is_file()
+class TestPhase3Pipelines(unittest.TestCase):
+    def test_pipeline_files_present(self) -> None:
+        pdir = ROOT / "pipelines"
+        for name in EXPECTED:
+            self.assertTrue((pdir / name).is_file(), f"missing {name}")
+        self.assertTrue((pdir / "index.md").is_file())
 
+    def test_phase3_chapter_and_advanced_orchestration(self) -> None:
+        self.assertTrue((ROOT / "03-phase-03-advanced-orchestration-production-pipelines.md").is_file())
+        self.assertTrue((ROOT / "docs" / "advanced-orchestration.md").is_file())
 
-def test_phase3_chapter_and_advanced_orchestration():
-    assert (ROOT / "03-phase-03-advanced-orchestration-production-pipelines.md").is_file()
-    assert (ROOT / "docs" / "advanced-orchestration.md").is_file()
+    def test_phase4_unreal_chapter_and_tree(self) -> None:
+        self.assertTrue((ROOT / "04-phase-04-unreal-native-integration-procedural-mastery.md").is_file())
+        self.assertTrue((ROOT / "unreal" / "index.md").is_file())
 
+    def test_automation_scripts_exist(self) -> None:
+        for name in (
+            "studio-health-check.py",
+            "pipeline-runner.py",
+            "studio-metrics.py",
+            "nightly-studio-audit.py",
+            "unreal-mcp-health.py",
+        ):
+            self.assertTrue((ROOT / "scripts" / name).is_file(), f"missing scripts/{name}")
 
-def test_phase4_unreal_chapter_and_tree():
-    assert (ROOT / "04-phase-04-unreal-native-integration-procedural-mastery.md").is_file()
-    assert (ROOT / "unreal" / "index.md").is_file()
-
-
-def test_automation_scripts_exist():
-    for name in (
-        "studio-health-check.py",
-        "pipeline-runner.py",
-        "studio-metrics.py",
-        "nightly-studio-audit.py",
-        "unreal-mcp-health.py",
-    ):
-        assert (ROOT / "scripts" / name).is_file()
-
-
-def test_studio_health_check_exits_zero():
-    r = subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / "studio-health-check.py"), "--require-phase2-mark"],
-        cwd=str(ROOT),
-        capture_output=True,
-        text=True,
-    )
-    assert r.returncode == 0, r.stdout + r.stderr
+    def test_studio_health_check_exits_zero(self) -> None:
+        r = subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / "studio-health-check.py"), "--require-phase2-mark"],
+            cwd=str(ROOT),
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)

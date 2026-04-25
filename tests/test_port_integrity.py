@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,76 +28,73 @@ def _iter_text_files() -> list[Path]:
     return out
 
 
-def test_no_alt_studio_codename():
-    hits: list[str] = []
-    needle = _T_ALT_STUDIO.lower()
-    for p in _iter_text_files():
-        rel = str(p.relative_to(ROOT)).replace("\\", "/")
-        t = rel.lower()
-        if needle in t:
-            hits.append(rel)
-            continue
-        try:
-            body = p.read_text(encoding="utf-8").lower()
-        except OSError:
-            continue
-        if needle in body:
-            hits.append(rel)
-    assert not hits, "Forbidden alt-studio token in: " + ", ".join(hits)
+class TestPortIntegrity(unittest.TestCase):
+    def test_no_alt_studio_codename(self) -> None:
+        hits: list[str] = []
+        needle = _T_ALT_STUDIO.lower()
+        for p in _iter_text_files():
+            rel = str(p.relative_to(ROOT)).replace("\\", "/")
+            t = rel.lower()
+            if needle in t:
+                hits.append(rel)
+                continue
+            try:
+                body = p.read_text(encoding="utf-8").lower()
+            except OSError:
+                continue
+            if needle in body:
+                hits.append(rel)
+        self.assertFalse(hits, "Forbidden alt-studio token in: " + ", ".join(hits))
 
+    def test_no_tabletop_engine_token(self) -> None:
+        pat = re.compile(rf"\b{re.escape(_T_TABLETOP)}\b", re.IGNORECASE)
+        hits: list[str] = []
+        for p in _iter_text_files():
+            try:
+                t = p.read_text(encoding="utf-8")
+            except OSError:
+                continue
+            if pat.search(t):
+                hits.append(str(p.relative_to(ROOT)))
+        self.assertFalse(hits, "Forbidden tabletop token in: " + ", ".join(hits))
 
-def test_no_tabletop_engine_token():
-    pat = re.compile(rf"\b{re.escape(_T_TABLETOP)}\b", re.IGNORECASE)
-    hits: list[str] = []
-    for p in _iter_text_files():
-        try:
-            t = p.read_text(encoding="utf-8")
-        except OSError:
-            continue
-        if pat.search(t):
-            hits.append(str(p.relative_to(ROOT)))
-    assert not hits, "Forbidden tabletop token in: " + ", ".join(hits)
+    def test_no_city_anchor_substring(self) -> None:
+        """Ban a common unrelated lore-engine city anchor substring company-wide."""
+        hits: list[str] = []
+        needle = _T_CITY_ANCHOR.lower()
+        for p in _iter_text_files():
+            rel = str(p.relative_to(ROOT)).replace("\\", "/")
+            if needle in rel.lower():
+                hits.append(rel)
+                continue
+            try:
+                t = p.read_text(encoding="utf-8")
+            except OSError:
+                continue
+            if needle in t.lower():
+                hits.append(rel)
+        self.assertFalse(hits, "Forbidden city-anchor substring in: " + ", ".join(hits))
 
+    def test_no_meme_filename_token(self) -> None:
+        hits: list[str] = []
+        needle = _T_MEME_FILE.lower()
+        for p in _iter_text_files():
+            rel = str(p.relative_to(ROOT)).replace("\\", "/")
+            if needle in rel.lower():
+                hits.append(rel)
+                continue
+            try:
+                t = p.read_text(encoding="utf-8")
+            except OSError:
+                continue
+            if needle in t.lower():
+                hits.append(rel)
+        self.assertFalse(hits, "Forbidden meme filename token in: " + ", ".join(hits))
 
-def test_no_city_anchor_substring():
-    """Ban a common unrelated lore-engine city anchor substring company-wide."""
-    hits: list[str] = []
-    needle = _T_CITY_ANCHOR.lower()
-    for p in _iter_text_files():
-        rel = str(p.relative_to(ROOT)).replace("\\", "/")
-        if needle in rel.lower():
-            hits.append(rel)
-            continue
-        try:
-            t = p.read_text(encoding="utf-8")
-        except OSError:
-            continue
-        if needle in t.lower():
-            hits.append(rel)
-    assert not hits, "Forbidden city-anchor substring in: " + ", ".join(hits)
-
-
-def test_no_meme_filename_token():
-    hits: list[str] = []
-    needle = _T_MEME_FILE.lower()
-    for p in _iter_text_files():
-        rel = str(p.relative_to(ROOT)).replace("\\", "/")
-        if needle in rel.lower():
-            hits.append(rel)
-            continue
-        try:
-            t = p.read_text(encoding="utf-8")
-        except OSError:
-            continue
-        if needle in t.lower():
-            hits.append(rel)
-    assert not hits, "Forbidden meme filename token in: " + ", ".join(hits)
-
-
-def test_agent_skill_rule_counts():
-    agents = list((ROOT / ".cursor" / "agents").rglob("*.md"))
-    skills = list((ROOT / ".cursor" / "skills").rglob("SKILL.md"))
-    rules = list((ROOT / ".cursor" / "rules").glob("*.mdc"))
-    assert len(agents) == 49
-    assert len(skills) == 75
-    assert len(rules) == 12
+    def test_agent_skill_rule_counts(self) -> None:
+        agents = list((ROOT / ".cursor" / "agents").rglob("*.md"))
+        skills = list((ROOT / ".cursor" / "skills").rglob("SKILL.md"))
+        rules = list((ROOT / ".cursor" / "rules").glob("*.mdc"))
+        self.assertEqual(len(agents), 49)
+        self.assertEqual(len(skills), 75)
+        self.assertEqual(len(rules), 12)

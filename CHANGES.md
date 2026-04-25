@@ -7,6 +7,13 @@ All notable changes to **Cursor Game Studios** are documented here.
 
 ## [Unreleased]
 
+### Fixed
+
+- **Unittest discovery on Python 3.11+ / Windows:** add `tests/__init__.py` and
+  refactor tests as `unittest.TestCase` subclasses so
+  `python -m unittest discover -s tests -p "test_*.py" -v -t .` runs the same
+  checks as pytest; document `-t .` in `README.md` and `TASKLIST.md`.
+
 ### Added
 
 - **Phase 4 — Unreal Engine 5.5+ native integration & procedural mastery:**
