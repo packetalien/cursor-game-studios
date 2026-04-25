@@ -152,3 +152,62 @@ If VERIFIED FIXED: run `/bug-report close [BUG-ID]` to formally close it.
 If STILL PRESENT: the hotfix failed — immediately re-open, assess rollback, and escalate.
 
 Schedule a post-incident review within 48 hours using `/retrospective hotfix`.
+
+<!-- PHASE2_DEEPENING_BEGIN -->
+## Phase 2 — Skill deepening (Cursor Game Studios)
+
+### Rich procedural spine (`hotfix`)
+
+Treat this skill as a **flight checklist**, not a vibe. Each invocation should
+end with: **inputs read → actions taken → artifacts produced → risks noted**.
+
+### Spawn template (copy/paste starter)
+
+```text
+You are executing the Cursor Game Studios skill `hotfix`.
+
+Constraints:
+- Collaboration protocol: question → options → decision → draft → approval.
+- Prefer diffs and tests as evidence.
+- If MCP is available, use it only for verification or deterministic automation.
+
+Task:
+<describe the concrete outcome you want>
+```
+
+### MCP gate requirements
+
+| Gate | Requirement |
+|------|-------------|
+| **G0** | Story/design references exist or explicit “greenfield” declaration |
+| **G1** | File targets identified (paths) before bulk writes |
+| **G2** | Tests or review plan named before “done” claims |
+| **G3** | If engine MCP is used, mutations are **serialized** (no parallel writes) |
+
+If a gate is missing, **stop** and ask for the minimum artifact to proceed.
+
+### Worked example (skeleton)
+
+1. **Locate** the governing doc or story file.
+2. **Extract** acceptance criteria verbatim.
+3. **Plan** the smallest change set that satisfies them.
+4. **Implement** with incremental commits (human-triggered).
+5. **Verify** with the narrowest test that proves the criteria.
+
+### Common failure modes and recovery
+
+| Failure | Recovery |
+|---------|----------|
+| Scope creep mid-flight | Cut a “phase 2b” story; ship the slice |
+| Missing ADR / GDD link | Write a one-paragraph decision stub, then link |
+| Flaky verification | Stabilize test data; reduce parallelism |
+| Tool timeouts | Fall back to local commands; shrink batch size |
+
+### Skill evolution path
+
+- **v1:** checklist fidelity (this repo)
+- **v2:** add engine-specific exemplars in `skills/` reference tree
+- **v3:** wire optional MCP “verify steps” where safe
+
+---
+*Deepening appended by `scripts/phase2-deepen.py` — preserves upstream skill body above.*

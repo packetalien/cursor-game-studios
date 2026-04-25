@@ -6,7 +6,7 @@
 
 - [North star](#north-star)
 - [Ten phases](#ten-phases)
-- [Phase 1 status](#phase-1-status)
+- [Phase status](#phase-status)
 
 ## North star
 
@@ -18,18 +18,21 @@ into the repository.
 
 | Phase | Name | Objective |
 |------:|------|-------------|
-| **1** | **Foundation** | 49 / 72 / 12 assets, docs, tests, legal spine |
-| 2 | Rule tuning | UE5 `Source/`, `Plugins/`, `Content/` globs where applicable |
-| 3 | Director workflows | Validate lead → specialist patterns in Cursor |
-| 4 | UE5.5+ notes | Rendering / networking / tooling guidance (docs only) |
-| 5 | MCP hygiene | Least-privilege patterns for optional MCP servers |
-| 6 | CI translation | Map legacy hook ideas to `pre-commit` + CI |
-| 7 | Skill UX | Short routing notes in `docs/` |
-| 8 | Performance | Profiling checklists (engine-agnostic shell) |
-| 9 | Release | Checklists aligned with release skills |
-| 10 | Sustainability | Upstream diff discipline and versioning |
+| **1** | **Foundation** | 49 / 72 / 12 assets, docs, legal spine, push to GitHub |
+| **2** | **Agent and skill deepening** | Additive deepening + `skills/` tree + doctrine + affinity matrix |
+| 3 | **Rule tuning (engine paths)** | Tune `.mdc` globs for UE5 `Source/`, `Plugins/`, `Content/` when adopted |
+| 4 | **Director workflow drills** | Validate lead → specialist patterns in Cursor Task flows |
+| 5 | **UE5.5+ exemplars** | Long-form examples in `skills/` companions (non-breaking) |
+| 6 | **MCP hardening** | Least-privilege templates and timeouts |
+| 7 | **CI translation** | Map legacy hook ideas to `pre-commit` + CI |
+| 8 | **Performance chapter** | Studio-wide profiling checklists |
+| 9 | **Release discipline** | Harden release skills with org-specific gates |
+| 10 | **Sustainability** | Upstream diff discipline and semver for port releases |
 
-## Phase 1 status
+## Phase status
 
-**Target: complete** for `cursor-game-studios` scaffold: agents, skills, rules,
-generator, documentation, integrity tests, and legal files.
+| Phase | State |
+|------:|-------|
+| 1 | **Complete** |
+| 2 | **Complete** (see `02-phase-02-agent-skill-deepening.md`) |
+| 3–10 | Planned |

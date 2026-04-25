@@ -11,6 +11,7 @@
 - [Specialists](#specialists)
 - [Skills](#skills)
 - [Rules](#rules)
+- [Phase 2 artifacts](#phase-2-artifacts)
 - [Index](#index)
 - [Glossary](#glossary)
 - [Index of tables](#index-of-tables)
@@ -177,6 +178,21 @@
 - test-standards.mdc
 - ui-code.mdc
 
+## Phase 2 artifacts
+
+| Artifact | Role |
+|----------|------|
+| `02-phase-02-agent-skill-deepening.md` | Phase 2 charter |
+| `scripts/phase2-deepen.py` | Idempotent deepening generator |
+| `skills/index.md` | Categorized skill companion index |
+| `skills/<category>/*.md` | 72 companion pages |
+| `docs/studio-operating-doctrine.md` | Studio philosophy |
+| `docs/orchestration-patterns.md` | Handoff patterns |
+| `docs/agent-skill-affinity-matrix.md` | Agent ↔ skill heuristics |
+
+All `.cursor/agents/**/*.md` and `.cursor/skills/**/SKILL.md` include a Phase 2
+appendix after `<!-- PHASE2_DEEPENING_BEGIN -->`.
+
 ## Index
 
 - Agents: [Directors](#directors), [Leads](#leads), [Specialists](#specialists)
@@ -197,4 +213,5 @@
 | Table | Location |
 |-------|----------|
 | Counts | [Counts](#counts) |
+| Phase 2 | [Phase 2 artifacts](#phase-2-artifacts) |
 | Glossary | [Glossary](#glossary) |

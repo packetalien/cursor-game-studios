@@ -31,3 +31,7 @@ re-homed for **Cursor** (`.cursor/` for agents, skills, and internal studio docs
 | `../.cursor/agents/` | Tiered subagent definitions |
 | `../.cursor/skills/` | Semantic workflow playbooks |
 | `../.cursor/rules/` | Path-scoped `.mdc` rules |
+| [studio-operating-doctrine.md](studio-operating-doctrine.md) | How the studio behaves under pressure |
+| [orchestration-patterns.md](orchestration-patterns.md) | Handoff and swarm patterns |
+| [agent-skill-affinity-matrix.md](agent-skill-affinity-matrix.md) | Heuristic agent ↔ skill pairings |
+| [`../skills/index.md`](../skills/index.md) | Categorized skill companion index (Phase 2) |

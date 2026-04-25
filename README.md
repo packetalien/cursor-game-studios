@@ -41,6 +41,7 @@ git push -u origin main
 ```bash
 git clone --depth 1 https://github.com/Donchitos/Claude-Code-Game-Studios.git _upstream
 python scripts/generate-cursor-game-studios.py --upstream _upstream
+python scripts/phase2-deepen.py
 pytest
 ```
 

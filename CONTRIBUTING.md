@@ -14,8 +14,10 @@
 
 1. Clone upstream to `_upstream/` (or pass `--upstream`).
 2. Run `python scripts/generate-cursor-game-studios.py`.
-3. Run `pytest`.
-4. Append `CHANGES.md` under `[Unreleased]`.
+3. Run `python scripts/phase2-deepen.py` to (re)apply Phase 2 appendices idempotently
+   and refresh the `skills/` companion tree.
+4. Run `pytest`.
+5. Append `CHANGES.md` under `[Unreleased]`.
 
 ## Rules style
 
