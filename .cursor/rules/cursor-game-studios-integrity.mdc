@@ -1,0 +1,12 @@
+---
+description: Cursor Game Studios — port boundaries and attribution
+alwaysApply: true
+---
+
+# Cursor Game Studios — integrity
+
+- This repository is **Cursor Game Studios**: a **Cursor-native structural port** of [Claude-Code-Game-Studios](https://github.com/Donchitos/Claude-Code-Game-Studios) (MIT, Donchitos). Preserve upstream attribution when sharing or modifying prompts.
+- Keep the tree focused on **game development workflows** in Cursor; do not merge unrelated product codenames, tabletop rule systems, or stray meme filenames into the core kit.
+- Prefer **Unreal Engine 5.5+** when the user targets UE (C++ core, Blueprints where appropriate); use the Godot or Unity specialist set when those engines are in scope.
+- Subagents: `.cursor/agents/{directors,leads,specialists}/`.
+- Skills: `.cursor/skills/<skill-id>/SKILL.md`.

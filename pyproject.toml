@@ -1,0 +1,14 @@
+[project]
+name = "cursor-game-studios"
+version = "0.1.0"
+description = "Cursor-native port of Claude-Code-Game-Studios"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

@@ -1,0 +1,3 @@
+Legacy upstream hooks (reference only)
+
+Copied from Claude-Code-Game-Studios .claude/hooks/ for audit visibility. Cursor Game Studios is Cursor-native: prefer CI, pre-commit, and .cursor/rules/*.mdc over bash hook parity.
