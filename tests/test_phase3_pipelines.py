@@ -16,6 +16,11 @@ EXPECTED = [
     "world-partition-pipeline.md",
     "build-deployment-pipeline.md",
     "automated-testing-pipeline.md",
+    "nanite-optimization-pipeline.md",
+    "lumen-lighting-pipeline.md",
+    "chaos-destruction-pipeline.md",
+    "pcg-asset-generation-pipeline.md",
+    "world-partition-streaming-pipeline.md",
 ]
 
 
@@ -31,12 +36,18 @@ def test_phase3_chapter_and_advanced_orchestration():
     assert (ROOT / "docs" / "advanced-orchestration.md").is_file()
 
 
+def test_phase4_unreal_chapter_and_tree():
+    assert (ROOT / "04-phase-04-unreal-native-integration-procedural-mastery.md").is_file()
+    assert (ROOT / "unreal" / "index.md").is_file()
+
+
 def test_automation_scripts_exist():
     for name in (
         "studio-health-check.py",
         "pipeline-runner.py",
         "studio-metrics.py",
         "nightly-studio-audit.py",
+        "unreal-mcp-health.py",
     ):
         assert (ROOT / "scripts" / name).is_file()
 

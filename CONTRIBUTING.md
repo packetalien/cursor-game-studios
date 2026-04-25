@@ -20,6 +20,13 @@
 5. Optionally run `python scripts/nightly-studio-audit.py` before large merges.
 6. Append `CHANGES.md` under `[Unreleased]`.
 
+## Optional Unreal metrics
+
+For game repositories using this kit, you may set `CURSOR_UNREAL_UPROJECT` to an
+absolute path of a `.uproject` file so `scripts/unreal-mcp-health.py` (invoked
+from `nightly-studio-audit.py`) can validate presence and optionally read
+`Saved/StudioUnrealMetrics.json` emitted by your own editor hooks.
+
 ## Rules style
 
 - Prefer concise `.mdc` rules with explicit `globs`.

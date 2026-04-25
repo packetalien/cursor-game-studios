@@ -35,6 +35,8 @@ def _parse_frontmatter(text: str) -> tuple[dict[str, str], str]:
 
 def _skill_category(skill_id: str) -> str:
     s = skill_id.lower()
+    if s.startswith("pcg-"):
+        return "pcg"
     if s in {"start", "help", "adopt", "onboard", "setup-engine", "project-stage-detect"}:
         return "onboarding"
     if s.startswith("team-"):
@@ -263,7 +265,7 @@ def write_skill_reference_tree() -> tuple[int, int]:
     count = 0
     cats: set[str] = set()
     skills_root = ROOT / ".cursor" / "skills"
-    for skill_md in sorted(skills_root.glob("*/SKILL.md")):
+    for skill_md in sorted(skills_root.rglob("SKILL.md")):
         sid = skill_md.parent.name
         cat = _skill_category(sid)
         cats.add(cat)
@@ -306,7 +308,7 @@ Exemplars and engine-specific expansions may land here in later phases.
     for c in sorted(cats):
         lines.append(f"- [`{c}/`]({c}/)")
     lines += ["", "## All skills", ""]
-    for skill_md in sorted(skills_root.glob("*/SKILL.md")):
+    for skill_md in sorted(skills_root.rglob("SKILL.md")):
         sid = skill_md.parent.name
         cat = _skill_category(sid)
         lines.append(f"- [`{cat}/{sid}.md`]({cat}/{sid}.md)")
@@ -316,7 +318,7 @@ Exemplars and engine-specific expansions may land here in later phases.
 
 def main() -> None:
     agents = sorted((ROOT / ".cursor" / "agents").rglob("*.md"))
-    skills = sorted((ROOT / ".cursor" / "skills").glob("*/SKILL.md"))
+    skills = sorted((ROOT / ".cursor" / "skills").rglob("SKILL.md"))
     ac = sum(1 for p in agents if deepen_agent(p))
     sc = sum(1 for p in skills if deepen_skill(p))
     ref_n, ref_cats = write_skill_reference_tree()

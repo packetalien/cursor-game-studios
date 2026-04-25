@@ -98,5 +98,5 @@ def test_agent_skill_rule_counts():
     skills = list((ROOT / ".cursor" / "skills").rglob("SKILL.md"))
     rules = list((ROOT / ".cursor" / "rules").glob("*.mdc"))
     assert len(agents) == 49
-    assert len(skills) == 72
+    assert len(skills) == 75
     assert len(rules) == 12

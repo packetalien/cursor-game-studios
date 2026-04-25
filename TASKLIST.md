@@ -14,7 +14,7 @@
 
 - [x] `03-phase-03-advanced-orchestration-production-pipelines.md`
 - [x] `docs/advanced-orchestration.md`
-- [x] `pipelines/` — nine pipeline definitions + `pipelines/index.md`
+- [x] `pipelines/` — nine baseline pipeline definitions + `pipelines/index.md`
 - [x] `scripts/studio-health-check.py`
 - [x] `scripts/pipeline-runner.py`
 - [x] `scripts/studio-metrics.py`
@@ -22,7 +22,18 @@
 - [x] `tests/test_phase3_pipelines.py`
 - [x] Metadata + `docs/index.md` + `README.md` links
 
-## Phase 4+ (next)
+## Phase 4 (Unreal 5.5+ native + procedural mastery) — complete
 
-- [ ] Tune `.mdc` globs for your real UE project layout
+- [x] `04-phase-04-unreal-native-integration-procedural-mastery.md`
+- [x] `unreal/` documentation tree (MCP, agents, Live Link, PCG, WP, rendering)
+- [x] Five new Unreal-focused pipelines + `pipelines/index.md` refresh
+- [x] Three PCG skills under `.cursor/skills/pcg/`
+- [x] `scripts/unreal-mcp-health.py` + health check / nightly audit wiring
+- [x] `studio-metrics.py` includes `unreal/` byte estimate
+- [x] Tests + metadata (`MANIFEST`, `CHANGES`, `ROADMAP`, `STATUS`, `README`, `docs/index.md`, `CONTRIBUTING`)
+
+## Phase 5+ (next)
+
+- [ ] Typed MCP tool schemas + timeouts for your game repo
+- [ ] Emit `Saved/StudioUnrealMetrics.json` from editor hooks (optional)
 - [ ] Wire `nightly-studio-audit.py` into CI schedule (optional)

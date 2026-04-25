@@ -12,7 +12,8 @@
 
 Ship a **high-fidelity**, **attribution-clean**, **Cursor-native** studio kit
 derived from Claude-Code-Game-Studios—without smuggling unrelated product lore
-into the repository.
+into the repository—while keeping an **authoritative Unreal 5.5+ lane** for
+modern production.
 
 ## Ten phases
 
@@ -20,14 +21,14 @@ into the repository.
 |------:|------|-------------|
 | **1** | **Foundation** | 49 / 72 / 12 assets, docs, legal spine, push to GitHub |
 | **2** | **Agent and skill deepening** | Additive deepening + `skills/` tree + doctrine + affinity matrix |
-| **3** | **Orchestration + pipelines + automation** | Advanced orchestration, `pipelines/`, health/metrics/nightly audit scripts |
-| 4 | **Rule tuning (engine paths)** | Tune `.mdc` globs for UE5 `Source/`, `Plugins/`, `Content/` when adopted |
-| 5 | **Director workflow drills** | Validate lead → specialist patterns in Cursor Task flows |
-| 6 | **Engine exemplars** | Long-form examples in `skills/` companions (non-breaking) |
-| 7 | **MCP hardening** | Least-privilege templates and timeouts |
-| 8 | **CI translation** | Map legacy hook ideas to `pre-commit` + CI |
-| 9 | **Performance chapter** | Studio-wide profiling checklists |
-| 10 | **Sustainability** | Upstream diff discipline and semver for port releases |
+| **3** | **Orchestration + pipelines + automation** | Advanced orchestration, baseline `pipelines/`, health/metrics/nightly audit |
+| **4** | **Unreal native + procedural mastery** | `unreal/` doctrine, PCG skills, Nanite/Lumen/Chaos/WP/PCG pipelines, optional metrics probe |
+| **5** | **MCP hardening** | Typed tools, timeouts, least-privilege templates for editor bridges |
+| **6** | **CI evidence translation** | Map audit outputs to CI artifacts; gate merges on health + contamination |
+| **7** | **Director workflow drills** | Validate lead → specialist Task flows with Unreal-heavy exemplars |
+| **8** | **Engine exemplars expansion** | Long-form companions in `skills/` for UE workflows (non-breaking) |
+| **9** | **Performance chapter + SLOs** | Studio-wide profiling checklists tied to heartbeat metrics |
+| **10** | **Sustainability + semver** | Upstream diff discipline and port release versioning |
 
 ## Phase status
 
@@ -36,4 +37,5 @@ into the repository.
 | 1 | **Complete** |
 | 2 | **Complete** (see `02-phase-02-agent-skill-deepening.md`) |
 | 3 | **Complete** (see `03-phase-03-advanced-orchestration-production-pipelines.md`) |
-| 4–10 | Planned |
+| 4 | **Complete** (see `04-phase-04-unreal-native-integration-procedural-mastery.md`) |
+| 5–10 | Planned |

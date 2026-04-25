@@ -7,7 +7,7 @@
 > codenames beyond what you explicitly add to your own game project.
 
 **Cursor Game Studios** ships the same studio shape as upstream—**49** agent
-definitions, **72** semantic skills, and **12** `.mdc` rules (eleven path-scoped
+definitions, **75** semantic skills, and **12** `.mdc` rules (eleven path-scoped
 ports plus one integrity rule)—mapped to Cursor conventions (`.cursor/agents`,
 `.cursor/skills`, `.cursor/rules`).
 
@@ -52,14 +52,14 @@ if needed).
 
 ```bash
 pip install pytest
-pytest
+python -m pytest
 ```
 
 ## Phase 3 — Orchestration & pipelines
 
 - **Charter:** `03-phase-03-advanced-orchestration-production-pipelines.md`
 - **Advanced orchestration:** `docs/advanced-orchestration.md`
-- **Pipelines:** `pipelines/index.md`
+- **Pipelines:** `pipelines/index.md` (Phase 3 baseline + Phase 4 Unreal lanes)
 - **Automation:**
 
 ```bash
@@ -68,7 +68,17 @@ python scripts/pipeline-runner.py --list
 python scripts/pipeline-runner.py vertical-slice
 python scripts/studio-metrics.py
 python scripts/nightly-studio-audit.py
+python scripts/unreal-mcp-health.py
 ```
+
+## Phase 4 — Unreal 5.5+ native integration
+
+- **Charter:** `04-phase-04-unreal-native-integration-procedural-mastery.md`
+- **Unreal lane:** `unreal/index.md` (MCP, Live Link, PCG, World Partition, rendering)
+- **New pipelines:** Nanite, Lumen, Chaos, PCG asset generation, WP streaming (see `pipelines/index.md`)
+- **PCG skills:** `.cursor/skills/pcg/pcg-*/SKILL.md`
+- **Optional game metrics:** set `CURSOR_UNREAL_UPROJECT` to an absolute `.uproject` path;
+  game repo may emit `Saved/StudioUnrealMetrics.json` for `unreal-mcp-health.py`
 
 ## License
 

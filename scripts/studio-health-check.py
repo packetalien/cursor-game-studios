@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Studio structure health check: agent/skill/rule counts + pipeline presence.
+Studio structure health check: agent/skill/rule counts, pipeline presence,
+and Unreal doc tree (`unreal/`).
 
 Exit 0 if healthy, 1 otherwise.
 
@@ -24,6 +25,28 @@ EXPECTED_PIPELINES = [
     "world-partition-pipeline.md",
     "build-deployment-pipeline.md",
     "automated-testing-pipeline.md",
+    "nanite-optimization-pipeline.md",
+    "lumen-lighting-pipeline.md",
+    "chaos-destruction-pipeline.md",
+    "pcg-asset-generation-pipeline.md",
+    "world-partition-streaming-pipeline.md",
+]
+EXPECTED_UNREAL_DOCS = [
+    "unreal/index.md",
+    "unreal/unreal-mcp-integration.md",
+    "unreal/unreal-agent-capabilities.md",
+    "unreal/live-link-patterns.md",
+    "unreal/pcg-mastery/pcg-rule-systems.md",
+    "unreal/pcg-mastery/pcg-quality-gates.md",
+    "unreal/pcg-mastery/pcg-agent-specialists.md",
+    "unreal/world-partition/world-partition-orchestration.md",
+    "unreal/world-partition/streaming-optimization-patterns.md",
+    "unreal/world-partition/large-world-debugging.md",
+    "unreal/rendering-tech/nanite-optimization-workflows.md",
+    "unreal/rendering-tech/lumen-gi-reflections.md",
+    "unreal/rendering-tech/chaos-physics-destruction.md",
+    "unreal/rendering-tech/virtual-shadow-maps.md",
+    "unreal/rendering-tech/material-shader-automation.md",
 ]
 MARKER = "<!-- PHASE2_DEEPENING_BEGIN -->"
 
@@ -43,8 +66,8 @@ def main() -> int:
     rules = list((ROOT / ".cursor" / "rules").glob("*.mdc"))
     if len(agents) != 49:
         errs.append(f"agents: expected 49, got {len(agents)}")
-    if len(skills) != 72:
-        errs.append(f"skills: expected 72, got {len(skills)}")
+    if len(skills) != 75:
+        errs.append(f"skills: expected 75, got {len(skills)}")
     if len(rules) != 12:
         errs.append(f"rules: expected 12, got {len(rules)}")
 
@@ -53,6 +76,11 @@ def main() -> int:
         p = pdir / name
         if not p.is_file():
             errs.append(f"missing pipeline: pipelines/{name}")
+
+    for rel in EXPECTED_UNREAL_DOCS:
+        u = ROOT / rel
+        if not u.is_file():
+            errs.append(f"missing unreal doc: {rel}")
 
     if args.require_phase2_mark:
         for f in agents + skills:
@@ -69,6 +97,7 @@ def main() -> int:
         "studio-health-check OK:",
         f"agents={len(agents)} skills={len(skills)} rules={len(rules)}",
         f"pipelines={len(EXPECTED_PIPELINES)}",
+        f"unreal_docs={len(EXPECTED_UNREAL_DOCS)}",
     )
     return 0
 

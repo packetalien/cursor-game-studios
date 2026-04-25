@@ -85,6 +85,11 @@ def main() -> int:
 
     subprocess.run([sys.executable, str(ROOT / "scripts" / "studio-metrics.py")], cwd=str(ROOT))
 
+    subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "unreal-mcp-health.py")],
+        cwd=str(ROOT),
+    )
+
     c = contamination(args.strict)
     if c != 0:
         return c

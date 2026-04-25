@@ -13,6 +13,7 @@
 - [Rules](#rules)
 - [Phase 2 artifacts](#phase-2-artifacts)
 - [Phase 3 artifacts](#phase-3-artifacts)
+- [Phase 4 artifacts](#phase-4-artifacts)
 - [Index](#index)
 - [Glossary](#glossary)
 - [Index of tables](#index-of-tables)
@@ -28,7 +29,7 @@
 | Kind | Count |
 |------|------:|
 | Agents | 49 |
-| Skills | 72 |
+| Skills | 75 |
 | Rules | 12 |
 
 ## Directors
@@ -123,6 +124,9 @@
 - milestone-review
 - onboard
 - patch-notes
+- pcg-biome-generator
+- pcg-city-builder
+- pcg-dungeon-architect
 - perf-profile
 - playtest-report
 - project-stage-detect
@@ -186,7 +190,7 @@
 | `02-phase-02-agent-skill-deepening.md` | Phase 2 charter |
 | `scripts/phase2-deepen.py` | Idempotent deepening generator |
 | `skills/index.md` | Categorized skill companion index |
-| `skills/<category>/*.md` | 72 companion pages |
+| `skills/<category>/*.md` | 75 companion pages |
 | `docs/studio-operating-doctrine.md` | Studio philosophy |
 | `docs/orchestration-patterns.md` | Handoff patterns |
 | `docs/agent-skill-affinity-matrix.md` | Agent ↔ skill heuristics |
@@ -201,11 +205,25 @@ appendix after `<!-- PHASE2_DEEPENING_BEGIN -->`.
 | `03-phase-03-advanced-orchestration-production-pipelines.md` | Phase 3 charter |
 | `docs/advanced-orchestration.md` | Multi-agent orchestration + rhythm |
 | `pipelines/index.md` | Pipeline catalog |
-| `pipelines/*-pipeline.md` | Nine production pipeline definitions |
+| `pipelines/*-pipeline.md` | Fourteen production pipeline definitions |
 | `scripts/studio-health-check.py` | Structure + optional Phase2 marker gate |
 | `scripts/pipeline-runner.py` | Pipeline checklist printer |
 | `scripts/studio-metrics.py` | JSON metrics snapshot |
 | `scripts/nightly-studio-audit.py` | Health + metrics + contamination scan |
+
+## Phase 4 artifacts
+
+| Artifact | Role |
+|----------|------|
+| `04-phase-04-unreal-native-integration-procedural-mastery.md` | Phase 4 charter |
+| `unreal/` | MCP, agents, Live Link, PCG, World Partition, rendering tech |
+| `pipelines/nanite-optimization-pipeline.md` | Nanite optimization lane |
+| `pipelines/lumen-lighting-pipeline.md` | Lumen lighting lane |
+| `pipelines/chaos-destruction-pipeline.md` | Chaos destruction lane |
+| `pipelines/pcg-asset-generation-pipeline.md` | PCG asset generation lane |
+| `pipelines/world-partition-streaming-pipeline.md` | WP streaming lane |
+| `.cursor/skills/pcg/pcg-*/SKILL.md` | PCG specialist skills |
+| `scripts/unreal-mcp-health.py` | Optional `.uproject` + metrics probe |
 
 ## Index
 
@@ -229,4 +247,5 @@ appendix after `<!-- PHASE2_DEEPENING_BEGIN -->`.
 | Counts | [Counts](#counts) |
 | Phase 2 | [Phase 2 artifacts](#phase-2-artifacts) |
 | Phase 3 | [Phase 3 artifacts](#phase-3-artifacts) |
+| Phase 4 | [Phase 4 artifacts](#phase-4-artifacts) |
 | Glossary | [Glossary](#glossary) |

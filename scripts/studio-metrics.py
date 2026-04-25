@@ -19,7 +19,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def _count_bytes() -> int:
     total = 0
-    roots = [ROOT / ".cursor", ROOT / "docs", ROOT / "pipelines", ROOT / "skills", ROOT / "scripts"]
+    roots = [
+        ROOT / ".cursor",
+        ROOT / "docs",
+        ROOT / "pipelines",
+        ROOT / "skills",
+        ROOT / "scripts",
+        ROOT / "unreal",
+    ]
     for base in roots:
         if not base.is_dir():
             continue

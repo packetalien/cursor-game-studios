@@ -36,5 +36,7 @@ re-homed for **Cursor** (`.cursor/` for agents, skills, and internal studio docs
 | [agent-skill-affinity-matrix.md](agent-skill-affinity-matrix.md) | Heuristic agent ↔ skill pairings |
 | [`../skills/index.md`](../skills/index.md) | Categorized skill companion index (Phase 2) |
 | [advanced-orchestration.md](advanced-orchestration.md) | Directors/leads/specialists + long-session rhythm (Phase 3) |
-| [`../pipelines/index.md`](../pipelines/index.md) | Production pipeline catalog (Phase 3) |
+| [`../pipelines/index.md`](../pipelines/index.md) | Production pipeline catalog (Phases 3–4) |
 | [`../03-phase-03-advanced-orchestration-production-pipelines.md`](../03-phase-03-advanced-orchestration-production-pipelines.md) | Phase 3 charter |
+| [`../04-phase-04-unreal-native-integration-procedural-mastery.md`](../04-phase-04-unreal-native-integration-procedural-mastery.md) | Phase 4 charter (Unreal native) |
+| [`../unreal/index.md`](../unreal/index.md) | Unreal 5.5+ integration index |

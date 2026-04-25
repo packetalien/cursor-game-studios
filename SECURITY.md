@@ -25,8 +25,16 @@ releases, secrets, and multiplayer security.
 Optional dev dependency: `pytest`. Pin versions under your own supply-chain
 policy if required.
 
+## Optional Unreal metrics (`StudioUnrealMetrics.json`)
+
+If your **game repository** emits performance snapshots for local automation,
+treat that JSON as **sensitive-ish operational data**: it can reveal project
+structure and timing. Do **not** place secrets, tokens, or player identifiers in
+metrics files; keep them build-local or redacted in CI artifacts.
+
 ## Audit history
 
 | Date | Summary |
 |------|---------|
 | 2026-04-14 | Initial SECURITY.md for Phase 1 |
+| 2026-04-14 | Phase 4 — documented optional Unreal metrics hygiene |

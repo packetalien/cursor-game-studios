@@ -23,8 +23,13 @@ ALIASES = {
     "asset": "asset-pipeline.md",
     "unreal-pcg": "unreal-pcg-pipeline.md",
     "world-partition": "world-partition-pipeline.md",
+    "world-partition-streaming": "world-partition-streaming-pipeline.md",
     "build-deploy": "build-deployment-pipeline.md",
     "automated-testing": "automated-testing-pipeline.md",
+    "nanite-optimization": "nanite-optimization-pipeline.md",
+    "lumen-lighting": "lumen-lighting-pipeline.md",
+    "chaos-destruction": "chaos-destruction-pipeline.md",
+    "pcg-asset-generation": "pcg-asset-generation-pipeline.md",
 }
 
 
