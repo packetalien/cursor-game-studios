@@ -210,6 +210,7 @@ appendix after `<!-- PHASE2_DEEPENING_BEGIN -->`.
 | `scripts/pipeline-runner.py` | Pipeline checklist printer |
 | `scripts/studio-metrics.py` | JSON metrics snapshot |
 | `scripts/nightly-studio-audit.py` | Health + metrics + contamination scan |
+| `scripts/run-unittest.py` | Unittest discover with `-s/-t` set to `tests` (Dropbox / Py3.14 safe) |
 
 ## Phase 4 artifacts
 

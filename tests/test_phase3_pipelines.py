@@ -47,6 +47,7 @@ class TestPhase3Pipelines(unittest.TestCase):
             "studio-metrics.py",
             "nightly-studio-audit.py",
             "unreal-mcp-health.py",
+            "run-unittest.py",
         ):
             self.assertTrue((ROOT / "scripts" / name).is_file(), f"missing scripts/{name}")
 

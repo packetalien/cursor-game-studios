@@ -10,9 +10,10 @@ All notable changes to **Cursor Game Studios** are documented here.
 ### Fixed
 
 - **Unittest discovery on Python 3.11+ / Windows:** add `tests/__init__.py` and
-  refactor tests as `unittest.TestCase` subclasses so
-  `python -m unittest discover -s tests -p "test_*.py" -v -t .` runs the same
-  checks as pytest; document `-t .` in `README.md` and `TASKLIST.md`.
+  refactor tests as `unittest.TestCase` subclasses so discovery matches pytest.
+  Document **`-s tests -t tests`** (not `-t .` with `-s tests`, which triggers
+  CPython’s “Start directory is not importable” check when `__init__.py` is
+  missing). Add `scripts/run-unittest.py` with absolute paths for Dropbox / any cwd.
 
 ### Added
 

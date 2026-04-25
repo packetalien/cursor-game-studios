@@ -16,7 +16,9 @@
 2. Run `python scripts/generate-cursor-game-studios.py`.
 3. Run `python scripts/phase2-deepen.py` to (re)apply Phase 2 appendices idempotently
    and refresh the `skills/` companion tree.
-4. Run `python -m pytest -q` (or `python -m unittest discover -s tests -p "test_*.py" -v -t .` from repo root).
+4. Run `python -m pytest -q` (or `python scripts/run-unittest.py`, or
+   `python -m unittest discover -s tests -t tests -p "test_*.py" -v` — avoid
+   `-t .` with `-s tests`; see `README.md`).
 5. Optionally run `python scripts/nightly-studio-audit.py` before large merges.
 6. Append `CHANGES.md` under `[Unreleased]`.
 

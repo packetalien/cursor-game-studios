@@ -63,7 +63,8 @@
 python scripts/studio-health-check.py --require-phase2-mark
 python scripts/nightly-studio-audit.py
 python -m pytest -q
-python -m unittest discover -s tests -p "test_*.py" -v -t .
+python -m unittest discover -s tests -t tests -p "test_*.py" -v
+python scripts/run-unittest.py
 ```
 
 ---

@@ -57,17 +57,27 @@ pip install pytest
 python -m pytest -q
 ```
 
-Stdlib **unittest** discovery (Python 3.11+ needs `-t .` so the `tests` package
-is importable; `tests/__init__.py` is included for that):
+Stdlib **unittest** discovery: **do not use** `-t .` with `-s tests`. In CPython,
+when the start directory is not the top-level directory, discovery requires
+`tests/__init__.py`; using **the same path** for both avoids that trap (works even
+if `__init__.py` were missing):
 
 ```bash
-python -m unittest discover -s tests -p "test_*.py" -v -t .
+python -m unittest discover -s tests -t tests -p "test_*.py" -v
 ```
 
-PowerShell (same intent):
+**Bulletproof (absolute paths, any working directory):**
+
+```bash
+python scripts/run-unittest.py
+python scripts/run-unittest.py -q
+```
+
+PowerShell:
 
 ```powershell
-python -m unittest discover -s tests -p "test_*.py" -v -t .
+python -m unittest discover -s tests -t tests -p "test_*.py" -v
+python scripts/run-unittest.py
 ```
 
 ## Phase 3 — Orchestration & pipelines
